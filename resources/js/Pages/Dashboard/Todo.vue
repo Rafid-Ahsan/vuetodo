@@ -5,9 +5,9 @@
       {{ $page.props.flash.success }}
     </p>
     <ul class="divide-y divide-gray-200">
-      <!-- <li v-for="">
-          <SingleTodo />
-      </li> -->
+      <li v-for="todo in todos.data" :key="todo.id">
+        <SingleTodo :todo="todo" />
+      </li>
     </ul>
   </div>
 </template>

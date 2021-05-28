@@ -5,7 +5,7 @@
         <div class="min-w-0 flex-1 px-4 md:grid md:grid-cols-2 md:gap-4">
           <div>
             <p class="text-sm font-medium text-indigo-600 truncate">
-              Task Name
+              {{ todo.name }}
             </p>
             <p class="mt-2 flex items-center text-sm text-gray-500">
               <!-- Heroicon name: solid/mail -->
@@ -23,14 +23,14 @@
                   d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
                 />
               </svg>
-              <span class="truncate">See Description</span>
+              <span class="truncate">{{ todo.description }}</span>
             </p>
           </div>
           <div class="hidden md:block">
             <div>
               <p class="text-sm text-gray-900">
                 Applied on
-                <time datetime="2020-01-07">January 7, 2020</time>
+                <time datetime="">{{ todo.updated_at }}</time>
               </p>
               <p class="mt-2 flex items-center text-sm text-gray-500">
                 <!-- Heroicon name: solid/check-circle -->
@@ -47,7 +47,7 @@
                     clip-rule="evenodd"
                   />
                 </svg>
-                Status
+                {{ todo.status }}
               </p>
             </div>
           </div>
@@ -75,6 +75,7 @@
 
 <script>
 export default {
+  props: ["todo"],
   created() {
     console.log("singletodo");
   },
